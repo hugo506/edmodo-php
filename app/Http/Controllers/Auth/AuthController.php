@@ -38,7 +38,7 @@ class AuthController extends Controller
      * @return void
      */
     public function __construct()
-    {
+    {    	
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
     
@@ -48,7 +48,8 @@ class AuthController extends Controller
      * @return Response
      */
     public function authenticate(Request $request)
-    {
+    {    	
+
     	$user = User::where('user_name', $request->username)
                ->first();
     	
@@ -58,7 +59,7 @@ class AuthController extends Controller
     		Auth::login($user);
     		return redirect()->intended('dashboard');
     	}else{
-    		return redirect()->intended('login_error');
+    		return view('error',['error_message'=>'Login Error']);
     	}
     	    		
     }

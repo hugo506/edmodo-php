@@ -15,14 +15,10 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('login_error', function () {
-	return view('login_error');
-});
-
 Route::post('login', 'Auth\AuthController@authenticate');
+Route::get('logout', 'Controller@getLogout');
 
-Route::get('dashboard','Controller@dashboard');
-
+Route::get('dashboard','Controller@getDashboard');
 	
 Route::get('student/homework_details/{id}', 'Controller@getHomework');
 Route::post('student/homework_submit', 'Controller@postHomework');
@@ -31,4 +27,4 @@ Route::get('teacher/homework_submissions/{id}', 'Controller@getHomeworkSubmissio
 Route::get('teacher/student_submissions/{homeworkid}/{studentid}', 'Controller@getStudentHomeworkHistory');
 
 
-Route::get('logout', 'Controller@getLogout');
+

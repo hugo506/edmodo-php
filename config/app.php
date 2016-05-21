@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -108,7 +108,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'errorlog'), //single
+    'log' => env('APP_LOG', 'errorlog'), //single errorlog
 
     /*
     |--------------------------------------------------------------------------
