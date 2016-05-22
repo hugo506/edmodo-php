@@ -17,7 +17,7 @@ class HomeworkAnswer
 		$this->homeworkId = $homeworkId;
 		$this->studentId = $studentId;
 		$this->answer = $answer;
-		$this->date = $date;
+		$this->answer_date = $date;
 	}
 	
 	/**
@@ -27,6 +27,6 @@ class HomeworkAnswer
 	 */
 	function compareDate($answer)
 	{		
-		return (strtotime($this->date) > strtotime($answer->date));
+		return (strtotime($this->answer_date) > strtotime($answer->answer_date));
 	}
 }
